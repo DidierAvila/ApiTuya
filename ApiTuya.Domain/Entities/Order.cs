@@ -15,12 +15,12 @@ namespace ApiTuya.Domain.Entities
         public int CustomerId { get; set; }
 
         [Column(name: "Radicado", TypeName = "Varchar (15)")]
-        public required string Radicado { get; set; }
+        public string Radicado { get; set; }
 
         [Column(name: "FechaCreacion")]
-        public required DateTime CreateDate { get; set; }
+        public DateTime CreateDate { get; set; }
 
         [Column(name: "Estado", TypeName = "Varchar (20)")]
-        public required string Status { get; set; }
+        public string Status { get; set; }
     }
 }

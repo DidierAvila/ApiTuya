@@ -63,13 +63,23 @@ namespace ApiTuya.Application.Services.Orders
             Order? CurrentOrder = await _OrderRepository.Find(x => x.Id == OrderId, cancellationToken);
             if (CurrentOrder != null)
             {
-                if (true)
+                if (CurrentOrder.CreateDate > DateTime.Now)
                 {
-                    
+                    return true;
                 }
-                return CurrentOrder;
             }
-            return null;
+            return false;
         }
+
+        public bool ValidatePlanOrder(Order Order)
+        {
+            if (Order != null && Order.Radicado.Contains('0'))
+            {
+                return true;
+            }
+            return false;
+        }
+
+
     }
 }

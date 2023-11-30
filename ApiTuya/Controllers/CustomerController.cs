@@ -23,7 +23,7 @@ namespace ApiTuya.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [Authorize(Roles = "Administrador")]
-        public async Task<IActionResult> CreateOrder([FromBody] Customer createRequest, CancellationToken cancellationToken)
+        public async Task<IActionResult> CreateCustomer([FromBody] Customer createRequest, CancellationToken cancellationToken)
         {
             var EntityUser = await _CustomerService.CreateCustomer(createRequest, cancellationToken);
             return Ok(new ApiResponse("User create", EntityUser, 200));
@@ -31,7 +31,7 @@ namespace ApiTuya.Controllers
 
         [HttpGet("{id}")]
         [Authorize(Roles = "Administrador")]
-        public async Task<IActionResult> ReadOrder([FromRoute]int id, CancellationToken cancellationToken)
+        public async Task<IActionResult> ReadCustomer([FromRoute]int id, CancellationToken cancellationToken)
         {
             var response = await _CustomerService.GetByID(id, cancellationToken);
             if (response != null)
@@ -49,7 +49,7 @@ namespace ApiTuya.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [Authorize(Roles = "Administrador")]
-        public async Task<IActionResult> UpdateOrder([FromRoute]int id, [FromBody] Customer updateRequest, CancellationToken cancellationToken)
+        public async Task<IActionResult> UpdateCustomer([FromRoute]int id, [FromBody] Customer updateRequest, CancellationToken cancellationToken)
         {
             Customer response = await _CustomerService.GetByID(id, cancellationToken);
             if (response == null)

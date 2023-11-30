@@ -11,5 +11,7 @@ namespace ApiTuya.Application.Services.Orders
         Task<Order?> Delete(int id, CancellationToken cancellationToken);
         Task Update(Order entity, CancellationToken cancellationToken);
         Task<Order?> Find(Expression<Func<Order, bool>> expr, CancellationToken cancellationToken);
+        Task<bool> ValidateExpirationDate(int OrderId, CancellationToken cancellationToken);
+        bool ValidatePlanOrder(Order Order);
     }
 }
