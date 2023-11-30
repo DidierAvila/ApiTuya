@@ -1,5 +1,4 @@
 using System.Linq.Expressions;
-using ApiPrueba.Dtos.Products;
 using ApiTuya.Application.Services.TEntitys;
 using ApiTuya.Domain.Entities;
 using ApiTuya.Infrastructure.Repositories.CustomerRepository;
@@ -26,11 +25,6 @@ namespace ApiTuya.Application.Services.Customers
         }
 
         public Task<Customer?> Delete(int id, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Customer?> Find(Expression<Func<Customer, bool>> expr, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }

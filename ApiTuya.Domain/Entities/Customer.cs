@@ -12,7 +12,7 @@ namespace ApiTuya.Domain.Entities
         public int Id { get; set; }
 
         [Column(name: "Nombre", TypeName = "Varchar (100)")]
-        public required string FirstName { get; set; }
+        public string FirstName { get; set; }
 
         [Column(name: "Apellido", TypeName = "Varchar (100)")]
         public string LastName { get; set; }

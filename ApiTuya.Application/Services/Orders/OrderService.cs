@@ -57,5 +57,19 @@ namespace ApiTuya.Application.Services.Orders
                 await _OrderRepository.Update(entity, cancellationToken);
             }
         }
+
+        public async Task<bool> ValidateExpirationDate(int OrderId, CancellationToken cancellationToken)
+        {
+            Order? CurrentOrder = await _OrderRepository.Find(x => x.Id == OrderId, cancellationToken);
+            if (CurrentOrder != null)
+            {
+                if (true)
+                {
+                    
+                }
+                return CurrentOrder;
+            }
+            return null;
+        }
     }
 }

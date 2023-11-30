@@ -10,6 +10,5 @@ namespace ApiTuya.Application.Services.TEntitys
         Task<Customer> CreateCustomer(Customer entity, CancellationToken cancellationToken);
         Task<Customer?> Delete(int id, CancellationToken cancellationToken);
         Task Update(Customer entity, CancellationToken cancellationToken);
-        Task<Customer?> Find(Expression<Func<Customer, bool>> expr, CancellationToken cancellationToken);
     }
 }

@@ -20,7 +20,7 @@ namespace ApiTuya.Application.Services.Users
 
         public async Task<User> Get(int id, CancellationToken cancellationToken)
         {
-            User CurrentUser = await _UserRepository.GetByID(id, cancellationToken);
+            User? CurrentUser = await _UserRepository.GetByID(id, cancellationToken);
             if (CurrentUser != null)
             {
                 return CurrentUser;
